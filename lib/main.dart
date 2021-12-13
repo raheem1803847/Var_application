@@ -18,13 +18,11 @@ class MyApp extends StatelessWidget {
         
       ),
       
-      home:login(),
+        home: login(),
       
       routes:
       {
-        '/login':(context)=>login(),
-        '/register':(context)=>register(),
-        '/HomeScreen':(context)=>HomeScreen(),
+      
       }
       
     );
