@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       
       title: 'login',
       theme: ThemeData(
@@ -21,8 +22,8 @@ class MyApp extends StatelessWidget {
         
       ),
       
-        home:login(),
-      
+      initialRoute: '/login',
+
       routes:
       {
         '/login':(context)=>login(),

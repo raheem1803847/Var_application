@@ -66,11 +66,12 @@ class _loginState extends State<login> {
                       height: 5.0,
                     ),
                     TextFormField(
+
                       autofocus: false,
                       validator: validateEmail,
                       onSaved: (value) => _Username = value,
                       decoration:
-                          buildInputDecoration('Enter Email', Icons.email),
+                       x.copyWith(hintText: 'Email')
                     ),
                     SizedBox(
                       height: 20.0,
@@ -85,7 +86,7 @@ class _loginState extends State<login> {
                       validator: (value)=>value!.isEmpty?'Please enter password':null,
                       onSaved: (value) => _Password = value,
                       decoration:
-                          buildInputDecoration('Enter password', Icons.lock),
+                              x.copyWith(hintText: 'password')
                     ),
                     SizedBox(
                       height: 20.0,

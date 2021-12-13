@@ -60,7 +60,7 @@ class _registerState extends State<register> {
                       obscureText: true,
                       validator: (value)=>value!.isEmpty? 'please enter your Name' : null,
                        onSaved: (value) => _Name ,
-                      decoration: buildInputDecoration2(''),
+                      decoration: x.copyWith(hintText: 'Name'),
                     ),
                     SizedBox(
                       height: 15.0,
@@ -74,7 +74,7 @@ class _registerState extends State<register> {
                       validator: validateEmail,
                       onSaved: (value) => _Username = value,
                       decoration:
-                          buildInputDecoration('Enter Email', Icons.email),
+                              x.copyWith(hintText: 'Email')
                     ),
                     SizedBox(
                       height: 20.0,
@@ -89,7 +89,7 @@ class _registerState extends State<register> {
                       validator: (value)=>value!.isEmpty?'Please enter password':null,
                       onSaved: (value) => _Password = value,
                       decoration:
-                          buildInputDecoration('Enter password', Icons.lock),
+                            x.copyWith(hintText: 'password')
                     ),
                     SizedBox(
                       height: 20.0,
@@ -104,7 +104,7 @@ class _registerState extends State<register> {
                       validator: (value)=>value!.isEmpty?'Your password is required':null,
                      onSaved: (value) => _confirmPassword = value,
                       decoration:
-                          buildInputDecoration('Confirm password', Icons.lock),
+                            x.copyWith(hintText: 'Confirm Password')
                     ),
                     SizedBox(
                       height: 20.0,

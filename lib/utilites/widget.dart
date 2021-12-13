@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 
-InputDecoration buildInputDecoration(String hintText, IconData icon) {
-  return InputDecoration(
-    prefixIcon: Icon(icon, color: Color.fromRGBO(100, 100, 100, 1.0)),
-    contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-    border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),
-  );
-}
+   const x=InputDecoration(
+  filled: true,
+  enabledBorder: OutlineInputBorder(
+    borderSide: BorderSide(
+      width: 2.0,
+    ),
+  ),
+  focusedBorder: OutlineInputBorder(
+    borderSide: BorderSide(
+      color:Colors.blue,
+      width: 2.0,
+    ),
+  ),
+);
 
 MaterialButton longButtons(String title, final VoidCallback? fun,
     {Color color: Colors.black, Color textColor: Colors.white}) {

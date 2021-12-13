@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utilites/LeagueContainer.dart';
+import 'package:flutter_application_1/utilites/menuBar.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -11,6 +12,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: MenuBar(),
       body: SafeArea(
         child: Container(
           decoration: BoxDecoration(
