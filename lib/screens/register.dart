@@ -29,10 +29,7 @@ class _registerState extends State<register> {
        
     };
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Regesteration'),
-        ),
-        body: SingleChildScrollView(
+        body:Center(
           child: Container(
               height: 800,
               decoration: BoxDecoration(
@@ -44,16 +41,20 @@ class _registerState extends State<register> {
                 ),
               ),
               padding: EdgeInsets.all(40.0),
+            
               child: Form(
-                key: formkey,
+                key: formkey,   
+            
                 child: Column(
-                  children: [
+                  
+                  children:[
                     SizedBox(
                       height: 20.0,
                     ),
                     Text('Name'),
                     SizedBox(
                       height: 5.0,
+                      
                     ),
                     TextFormField(
                       autofocus: false,

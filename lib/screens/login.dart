@@ -15,10 +15,9 @@ class _loginState extends State<login> {
   String? _Password;
   @override
   Widget build(BuildContext context) {
-    var dologin = () {  
-         Navigator.pushReplacementNamed(context, '/HomeScreen'); 
-    }
-    ;
+    var dologin = () {
+      Navigator.pushReplacementNamed(context, '/HomeScreen');
+    };
     final forgotLabel = Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
@@ -40,65 +39,60 @@ class _loginState extends State<login> {
       ],
     );
     return Scaffold(
-        appBar: AppBar(
-          title: Text('login'),
-        ),
         body: SingleChildScrollView(
-          child: Container(
-              height: 800,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/ixpap-5.jpg'),
-                  fit: BoxFit.cover,
-                  colorFilter:
-                      ColorFilter.mode(Colors.white60, BlendMode.colorDodge),
+      child: Container(
+          height: 800,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/ixpap-5.jpg'),
+              fit: BoxFit.cover,
+              colorFilter:
+                  ColorFilter.mode(Colors.white60, BlendMode.colorDodge),
+            ),
+          ),
+          padding: EdgeInsets.all(50.0),
+          child: Form(
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 15.0,
                 ),
-              ),
-              padding: EdgeInsets.all(40.0),
-              child: Form(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 15.0,
-                    ),
-                    Text('Email'),
-                    SizedBox(
-                      height: 5.0,
-                    ),
-                    TextFormField(
-
-                      autofocus: false,
-                      validator: validateEmail,
-                      onSaved: (value) => _Username = value,
-                      decoration:
-                       x.copyWith(hintText: 'Email')
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                    ),
-                    Text('Password'),
-                    SizedBox(
-                      height: 5.0,
-                    ),
-                    TextFormField(
-                      autofocus: false,
-                      obscureText: true,
-                      validator: (value)=>value!.isEmpty?'Please enter password':null,
-                      onSaved: (value) => _Password = value,
-                      decoration:
-                              x.copyWith(hintText: 'password')
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                    ),
-                    longButtons('Login', dologin),
-                    SizedBox(
-                      height: 8.0,
-                    ),
-                    forgotLabel
-                  ],
+                Text('Email'),
+                SizedBox(
+                  height: 5.0,
                 ),
-              )),
-        ));
+                TextFormField(
+                    autofocus: false,
+                    validator: validateEmail,
+                    onSaved: (value) => _Username = value,
+                    decoration: x.copyWith(hintText: 'Email')),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Text('Password'),
+                SizedBox(
+                  height: 5.0,
+                ),
+                TextFormField(
+                    autofocus: false,
+                    obscureText: true,
+                    validator: (value) =>
+                        value!.isEmpty ? 'Please enter password' : null,
+                    onSaved: (value) => _Password = value,
+                    decoration: x.copyWith(hintText: 'password')),
+                SizedBox(
+                  height: 20.0,
+                ),
+                longButtons('Login', dologin),
+                SizedBox(
+                  height: 8.0,
+                ),
+                forgotLabel
+              ],
+            ),
+          )),
+    ));
   }
 }
