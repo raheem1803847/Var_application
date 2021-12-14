@@ -4,6 +4,7 @@ import 'package:flutter_application_1/screens/MatchScreen.dart';
 import 'package:flutter_application_1/screens/Matchacc.dart';
 import 'package:flutter_application_1/screens/SplashScreen.dart';
 import 'package:flutter_application_1/screens/login.dart';
+import 'package:flutter_application_1/screens/profile/profile_screen.dart';
 import 'package:flutter_application_1/screens/register.dart';
 
 void main() {
@@ -17,28 +18,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      
-      title: 'login',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        
-      ),
-      
-     home: SplashScreen(),
-
-      routes:
-      {
-        '/login':(context)=>login(),
-        '/register':(context)=>register(),
-        '/HomeScreen':(context)=>HomeScreen(),
-      }
-      
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'login',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: SplashScreen(),
+        routes: {
+          '/login': (context) => login(),
+          '/register': (context) => register(),
+          '/HomeScreen': (context) => HomeScreen(),
+          '/profile_screen': (context) => ProfileScreen(),
+        });
   }
 }
-
-
-
-
-  
