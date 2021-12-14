@@ -16,7 +16,7 @@ class _HomeScreenState extends State<MatchScreen> {
         child: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(),
+                image: AssetImage('assets/images/mosalah.jpg'),
                 fit: BoxFit.cover,
                 colorFilter:
                     ColorFilter.mode(Colors.white10, BlendMode.colorDodge),

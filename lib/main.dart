@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/HomeScreen.dart';
+import 'package:flutter_application_1/screens/MatchScreen.dart';
+import 'package:flutter_application_1/screens/Matchacc.dart';
+import 'package:flutter_application_1/screens/SplashScreen.dart';
 import 'package:flutter_application_1/screens/login.dart';
 import 'package:flutter_application_1/screens/register.dart';
 
@@ -22,7 +25,7 @@ class MyApp extends StatelessWidget {
         
       ),
       
-      initialRoute: '/login',
+     home: SplashScreen(),
 
       routes:
       {
