@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sportsapp/widgets/LaLiga.dart';
-import 'package:sportsapp/widgets/PremierLeague.dart';
-import 'package:sportsapp/widgets/UEFA.dart';
+import 'package:flutter_application_1/utilites/menuBar.dart';
+import "package:flutter_application_1/widgets/LaLiga.dart";
+import 'package:flutter_application_1/widgets/PremierLeague.dart';
+import 'package:flutter_application_1/widgets/UEFA.dart';
 
 class Screen extends StatelessWidget {
   @override
@@ -9,7 +10,10 @@ class Screen extends StatelessWidget {
     return DefaultTabController(
       length: 6,
       child: Scaffold(
+         bottomNavigationBar: MenuBar(),
+           backgroundColor: Colors.black38,
         appBar: AppBar(
+           backgroundColor: Colors.black38,
           bottom: PreferredSize(
             child: TabBar(
               isScrollable: true,
@@ -119,15 +123,20 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
+        
         height: 800,
         margin: EdgeInsets.all(8.0),
         child: Column(
+          
           children: [
             Container(
+              
               height: 395,
               child: Column(
+                
                 children: [
                   Container(
+                    
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

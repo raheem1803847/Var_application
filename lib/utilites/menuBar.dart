@@ -16,7 +16,9 @@ class MenuBar extends StatelessWidget {
                 icon: Icon(
                   Icons.home_outlined,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                   Navigator.pushReplacementNamed(context, '/HomeScreen');
+                },
               ),
               IconButton(
                 icon: Icon(
@@ -33,9 +35,11 @@ class MenuBar extends StatelessWidget {
                 },
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/Screen');
+                },
                 icon: Icon(
-                  Icons.settings_outlined,
+                  Icons.timeline,
                 ),
               ),
             ],

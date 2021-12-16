@@ -73,20 +73,26 @@ flutter:
     - assets/images/mosalah.jpg
     - assets/images/download.png
     - assets/images/campnou.jpg
-    - assets/images/1.jpg
-    - assets/images/2.jpg
-    - assets/images/3.jpg
-    - assets/images/4.jpg
-    - assets/images/6.jpg
-    - assets/images/7.jpg
-    - assets/images/8.jpg
-    - assets/images/9.jpg
     - assets/images/profile.jfif
     - assets/icons/Camera Icon.svg
     - assets/icons/User Icon.svg
     - assets/icons/Mail.svg
     - assets/icons/Lock.svg
     - assets/icons/Log out.svg
+    - assets/images/wolves.png
+    - assets/images/arsenal.png
+    - assets/images/realmadrid.png
+    - assets/images/barca.png
+    - assets/images/athletico.png
+    - assets/images/sevilla.png
+    - assets/images/valencia.png
+    - assets/images/levante.png
+    - assets/images/getafe.png
+    - assets/images/sociedad.png
+    - assets/images/liverpool.png
+    - assets/images/chelsea.png
+    - assets/images/manutd_logo.png
+    - assets/images/mancity_logo.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

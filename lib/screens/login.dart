@@ -11,12 +11,17 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
+  final formkey = GlobalKey<FormState>();
   String? _Username;
   String? _Password;
   @override
   Widget build(BuildContext context) {
     var dologin = () {
-      Navigator.pushReplacementNamed(context, '/HomeScreen');
+      final form = formkey.currentState;
+      if (form!.validate()) {
+        form.save();
+       Navigator.pushReplacementNamed(context, '/HomeScreen');
+      }
     };
     final forgotLabel = Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,6 +57,7 @@ class _loginState extends State<login> {
           ),
           padding: EdgeInsets.all(50.0),
           child: Form(
+              key: formkey, 
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
