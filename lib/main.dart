@@ -5,7 +5,11 @@ import 'package:flutter_application_1/screens/Matchacc.dart';
 import 'package:flutter_application_1/screens/SplashScreen.dart';
 import 'package:flutter_application_1/screens/login.dart';
 import 'package:flutter_application_1/screens/profile/profile_screen.dart';
+import 'package:flutter_application_1/screens/Admin/AdminPerson.dart';
 import 'package:flutter_application_1/screens/register.dart';
+import 'package:flutter_application_1/screens/news.dart';
+import 'package:flutter_application_1/screens/Admin/AdminHome.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -29,6 +33,12 @@ class MyApp extends StatelessWidget {
           '/register': (context) => register(),
           '/HomeScreen': (context) => HomeScreen(),
           '/profile_screen': (context) => ProfileScreen(),
+          '/news': (context) => News(),
+          '/AdminHome':(context) => Admin(),
+          '/AdminPerson':(context) => AdminPerson(),
+          
+          
+
         });
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MenuBar extends StatelessWidget {
-  const MenuBar({Key? key}) : super(key: key);
+class MenuBarAdmin extends StatelessWidget {
+  const MenuBarAdmin({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,30 +16,18 @@ class MenuBar extends StatelessWidget {
                 icon: Icon(
                   Icons.home_outlined,
                 ),
-                onPressed: () {},
+                onPressed: () {Navigator.pushReplacementNamed(context, '/AdminHome');},
               ),
-              IconButton(
-                icon: Icon(
-                  Icons.account_balance_wallet_outlined,
-                ),
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/News');//AdminHome()
-                },
-              ),
+              
               IconButton(
                 icon: Icon(
                   Icons.person_outlined,
                 ),
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/profile_screen');
+                  Navigator.pushReplacementNamed(context, '/AdminPerson');
                 },
               ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.settings_outlined,
-                ),
-              ),
+              
             ],
           ),
         ],
