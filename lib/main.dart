@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/HomeScreen.dart';
-import 'package:flutter_application_1/screens/MatchScreen.dart';
-import 'package:flutter_application_1/screens/Matchacc.dart';
+import 'package:flutter_application_1/screens/Screen.dart';
 import 'package:flutter_application_1/screens/SplashScreen.dart';
 import 'package:flutter_application_1/screens/login.dart';
 import 'package:flutter_application_1/screens/profile/profile_screen.dart';
@@ -35,10 +34,8 @@ class MyApp extends StatelessWidget {
           '/profile_screen': (context) => ProfileScreen(),
           '/news': (context) => News(),
           '/AdminHome':(context) => Admin(),
-          '/AdminPerson':(context) => AdminPerson(),
-          
-          
-
+          '/AdminPerson':(context) => AdminPerson(),                 
+          '/Screen':(context)=>Screen(),
         });
   }
 }

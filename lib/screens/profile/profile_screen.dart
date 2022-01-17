@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/utilites/menuBar.dart';
 import 'components/body.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -6,6 +7,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: MenuBar(),
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.transparent,
