@@ -47,8 +47,13 @@ class _loginState extends State<login> {
         body: SingleChildScrollView(
       child: Container(
           height: 800,
-          decoration: BoxDecoration(
-            color: Colors.black,
+              decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/ixpap-5.jpg'),
+              fit: BoxFit.cover,
+              colorFilter:
+                  ColorFilter.mode(Colors.white60, BlendMode.colorDodge),
+            ),
           ),
           padding: EdgeInsets.all(50.0),
           child: Form(
@@ -60,7 +65,7 @@ class _loginState extends State<login> {
                 SizedBox(
                   height: 15.0,
                 ),
-                Text('Email',style: TextStyle(color: Colors.white),),
+                Text('Email',style: TextStyle(color: Colors.white10),),
                 SizedBox(
                   height: 5.0,
                   
@@ -91,7 +96,7 @@ class _loginState extends State<login> {
                 SizedBox(
                   height: 20.0,
                 ),
-                longButtons('Login', dologin,color: Colors.white12),
+                longButtons('Login', dologin,color: Colors.black87),
                 SizedBox(
                   height: 8.0,
                 ),

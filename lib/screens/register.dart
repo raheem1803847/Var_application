@@ -34,10 +34,14 @@ class _registerState extends State<register> {
             child:Center(
             child: Container(
               height: 700,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                
-              ),
+                decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/ixpap-5.jpg'),
+              fit: BoxFit.cover,
+              colorFilter:
+                  ColorFilter.mode(Colors.white60, BlendMode.colorDodge),
+            ),
+          ),
               padding: EdgeInsets.all(40.0),
             
               child: Form(
@@ -48,19 +52,6 @@ class _registerState extends State<register> {
                   children:[
                     SizedBox(
                       height: 20.0,
-                    ),
-                    Text('Name',style: TextStyle(color: Colors.white)),
-                    SizedBox(
-                      height: 5.0,
-                      
-                    ),
-                    TextFormField(
-                      autofocus: false,
-                      obscureText: true,
-                      validator: (value)=>value!.isEmpty? 'please enter your Name' : null,
-                       onSaved: (value) => _Name ,
-                      decoration: x.copyWith(hintText: 'Name',
-                    fillColor: Colors.white),
                     ),
                     SizedBox(
                       height: 15.0,
@@ -112,7 +103,7 @@ class _registerState extends State<register> {
                     SizedBox(
                       height: 20.0,
                     ),
-                    longButtons('Signup', doregister,color: Colors.white12),
+                    longButtons('Signup', doregister,color: Colors.black87),
                     SizedBox(
                       height: 8.0,
                     ),
