@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/HomeScreen.dart';
 import 'package:flutter_application_1/screens/Screen.dart';
@@ -9,8 +10,9 @@ import 'package:flutter_application_1/screens/register.dart';
 import 'package:flutter_application_1/screens/News.dart';
 import 'package:flutter_application_1/screens/Admin/AdminHome.dart';
 
-
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -33,9 +35,9 @@ class MyApp extends StatelessWidget {
           '/HomeScreen': (context) => HomeScreen(),
           '/profile_screen': (context) => ProfileScreen(),
           '/News': (context) => News(),
-          '/AdminHome':(context) => Admin(),
-          '/AdminPerson':(context) => AdminPerson(),                 
-          '/Screen':(context)=>Screen(),
+          '/AdminHome': (context) => Admin(),
+          '/AdminPerson': (context) => AdminPerson(),
+          '/Screen': (context) => Screen(),
         });
   }
 }
