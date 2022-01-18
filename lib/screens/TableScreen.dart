@@ -100,7 +100,7 @@ class _TableScreenState extends State<TableScreen> {
             child: Center(
               child: CircularProgressIndicator(
                 valueColor: AlwaysStoppedAnimation<Color>(
-                  Color(0xFFe70066),
+                  Color(0xFFFFFFFF),
                 ),
               ),
             ),
@@ -111,8 +111,8 @@ class _TableScreenState extends State<TableScreen> {
               decoration: BoxDecoration(
                   gradient: LinearGradient(
                 colors: [
-                  const Color(0xffe84860),
-                  const Color(0xffe70066),
+                  const Color(0xFFFFFFFF),
+                  const Color(0xFFFFFFFF),
                 ],
                 begin: const FractionalOffset(0.0, 0.0),
                 end: const FractionalOffset(0.0, 1.0),
