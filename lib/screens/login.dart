@@ -36,7 +36,7 @@ class _loginState extends State<login> {
         ),
         FlatButton(
           padding: EdgeInsets.only(left: 0.0),
-          child: Text("Sign up", style: TextStyle(fontWeight: FontWeight.w300)),
+          child: Text("Sign up", style: TextStyle(fontWeight: FontWeight.w300,color: Colors.white)),
           onPressed: () {
             Navigator.pushReplacementNamed(context, '/register');
           },
@@ -48,12 +48,7 @@ class _loginState extends State<login> {
       child: Container(
           height: 800,
           decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/ixpap-5.jpg'),
-              fit: BoxFit.cover,
-              colorFilter:
-                  ColorFilter.mode(Colors.white60, BlendMode.colorDodge),
-            ),
+            color: Colors.black,
           ),
           padding: EdgeInsets.all(50.0),
           child: Form(
@@ -65,19 +60,23 @@ class _loginState extends State<login> {
                 SizedBox(
                   height: 15.0,
                 ),
-                Text('Email'),
+                Text('Email',style: TextStyle(color: Colors.white),),
                 SizedBox(
                   height: 5.0,
+                  
                 ),
                 TextFormField(
                     autofocus: false,
                     validator: validateEmail,
                     onSaved: (value) => _Username = value,
-                    decoration: x.copyWith(hintText: 'Email')),
+                    decoration: x.copyWith(hintText: 'Email',
+                    fillColor: Colors.white
+                    )),
+                    
                 SizedBox(
                   height: 20.0,
                 ),
-                Text('Password'),
+                Text('Password',style: TextStyle(color: Colors.white),),
                 SizedBox(
                   height: 5.0,
                 ),
@@ -87,11 +86,12 @@ class _loginState extends State<login> {
                     validator: (value) =>
                         value!.isEmpty ? 'Please enter password' : null,
                     onSaved: (value) => _Password = value,
-                    decoration: x.copyWith(hintText: 'password')),
+                    decoration: x.copyWith(hintText: 'password',
+                    fillColor: Colors.white)),
                 SizedBox(
                   height: 20.0,
                 ),
-                longButtons('Login', dologin),
+                longButtons('Login', dologin,color: Colors.white12),
                 SizedBox(
                   height: 8.0,
                 ),

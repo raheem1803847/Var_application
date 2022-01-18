@@ -29,16 +29,14 @@ class _registerState extends State<register> {
        
     };
     return Scaffold(
-        body:Center(
-          child: Container(
-              height: 800,
+        body:ListView(children: [
+          Container(
+            child:Center(
+            child: Container(
+              height: 700,
               decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/ixpap-5.jpg'),
-                  fit: BoxFit.cover,
-                  colorFilter:
-                      ColorFilter.mode(Colors.white60, BlendMode.colorDodge),
-                ),
+                color: Colors.black,
+                
               ),
               padding: EdgeInsets.all(40.0),
             
@@ -51,7 +49,7 @@ class _registerState extends State<register> {
                     SizedBox(
                       height: 20.0,
                     ),
-                    Text('Name'),
+                    Text('Name',style: TextStyle(color: Colors.white)),
                     SizedBox(
                       height: 5.0,
                       
@@ -61,12 +59,13 @@ class _registerState extends State<register> {
                       obscureText: true,
                       validator: (value)=>value!.isEmpty? 'please enter your Name' : null,
                        onSaved: (value) => _Name ,
-                      decoration: x.copyWith(hintText: 'Name'),
+                      decoration: x.copyWith(hintText: 'Name',
+                    fillColor: Colors.white),
                     ),
                     SizedBox(
                       height: 15.0,
                     ),
-                    Text('Email'),
+                    Text('Email',style: TextStyle(color: Colors.white)),
                     SizedBox(
                       height: 5.0,
                     ),
@@ -75,12 +74,13 @@ class _registerState extends State<register> {
                       validator: validateEmail,
                       onSaved: (value) => _Username = value,
                       decoration:
-                              x.copyWith(hintText: 'Email')
+                              x.copyWith(hintText: 'Email',
+                    fillColor: Colors.white)
                     ),
                     SizedBox(
                       height: 20.0,
                     ),
-                    Text('Password'),
+                    Text('Password',style: TextStyle(color: Colors.white)),
                     SizedBox(
                       height: 5.0,
                     ),
@@ -90,12 +90,13 @@ class _registerState extends State<register> {
                       validator: (value)=>value!.isEmpty?'Please enter password':null,
                       onSaved: (value) => _Password = value,
                       decoration:
-                            x.copyWith(hintText: 'password')
+                            x.copyWith(hintText: 'password',
+                    fillColor: Colors.white)
                     ),
                     SizedBox(
                       height: 20.0,
                     ),
-                    Text(''),
+                    Text('',style: TextStyle(color: Colors.white)),
                     SizedBox(
                       height: 5.0,
                     ),
@@ -105,19 +106,27 @@ class _registerState extends State<register> {
                       validator: (value)=>value!.isEmpty?'Your password is required':null,
                      onSaved: (value) => _confirmPassword = value,
                       decoration:
-                            x.copyWith(hintText: 'Confirm Password')
+                            x.copyWith(hintText: 'Confirm Password',
+                    fillColor: Colors.white)
                     ),
                     SizedBox(
                       height: 20.0,
                     ),
-                    longButtons('Signup', doregister),
+                    longButtons('Signup', doregister,color: Colors.white12),
                     SizedBox(
                       height: 8.0,
                     ),
                   ],
                 ),
-              )),
-        ));
+              )
+              ))
+              ),
+              
+                
+        ],
+        addAutomaticKeepAlives: false,)
+        
+        );
   }
 
 }
