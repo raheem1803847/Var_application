@@ -6,7 +6,7 @@ import 'package:flutter_application_1/screens/login.dart';
 import 'package:flutter_application_1/screens/profile/profile_screen.dart';
 import 'package:flutter_application_1/screens/Admin/AdminPerson.dart';
 import 'package:flutter_application_1/screens/register.dart';
-import 'package:flutter_application_1/screens/news.dart';
+import 'package:flutter_application_1/screens/News.dart';
 import 'package:flutter_application_1/screens/Admin/AdminHome.dart';
 
 
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           '/register': (context) => register(),
           '/HomeScreen': (context) => HomeScreen(),
           '/profile_screen': (context) => ProfileScreen(),
-          '/news': (context) => News(),
+          '/News': (context) => News(),
           '/AdminHome':(context) => Admin(),
           '/AdminPerson':(context) => AdminPerson(),                 
           '/Screen':(context)=>Screen(),

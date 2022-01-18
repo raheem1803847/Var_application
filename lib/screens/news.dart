@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utilites/menuBar.dart';
 import 'package:flutter_application_1/utilites/widget.dart';
 
-
-
-
-
 void main() => runApp(News());
 
 class News extends StatelessWidget {
