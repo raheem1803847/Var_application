@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utilites/validator.dart';
@@ -12,15 +13,26 @@ class login extends StatefulWidget {
 
 class _loginState extends State<login> {
   final formkey = GlobalKey<FormState>();
-  String? _Username;
-  String? _Password;
+  String _Username = '';
+  String _Password = '';
+  final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
-    var dologin = () {
+    var dologin = () async {
       final form = formkey.currentState;
       if (form!.validate()) {
-        form.save();
-       Navigator.pushReplacementNamed(context, '/HomeScreen');
+        try {
+          UserCredential result = await auth.signInWithEmailAndPassword(
+              email: _Username, password: _Password);
+          User? user = result.user;
+          Navigator.pushReplacementNamed(context, '/HomeScreen');
+        } on FirebaseAuthException catch (e) {
+          if (e.code == 'user-not-found') {
+            print('No user found for that email.');
+          } else if (e.code == 'wrong-password') {
+            print('Wrong password provided for that user.');
+          }
+        }
       }
     };
     final forgotLabel = Row(
@@ -36,7 +48,9 @@ class _loginState extends State<login> {
         ),
         FlatButton(
           padding: EdgeInsets.only(left: 0.0),
-          child: Text("Sign up", style: TextStyle(fontWeight: FontWeight.w300,color: Colors.white)),
+          child: Text("Sign up",
+              style:
+                  TextStyle(fontWeight: FontWeight.w300, color: Colors.white)),
           onPressed: () {
             Navigator.pushReplacementNamed(context, '/register');
           },
@@ -47,7 +61,7 @@ class _loginState extends State<login> {
         body: SingleChildScrollView(
       child: Container(
           height: 800,
-              decoration: BoxDecoration(
+          decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/ixpap-5.jpg'),
               fit: BoxFit.cover,
@@ -57,31 +71,34 @@ class _loginState extends State<login> {
           ),
           padding: EdgeInsets.all(50.0),
           child: Form(
-              key: formkey, 
+            key: formkey,
             child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
                   height: 15.0,
                 ),
-                Text('Email',style: TextStyle(color: Colors.white10),),
+                Text(
+                  'Email',
+                  style: TextStyle(color: Colors.white10),
+                ),
                 SizedBox(
                   height: 5.0,
-                  
                 ),
                 TextFormField(
                     autofocus: false,
                     validator: validateEmail,
-                    onSaved: (value) => _Username = value,
-                    decoration: x.copyWith(hintText: 'Email',
-                    fillColor: Colors.white
-                    )),
-                    
+                    onChanged: (value) => _Username = value,
+                    decoration:
+                        x.copyWith(hintText: 'Email', fillColor: Colors.white)),
                 SizedBox(
                   height: 20.0,
                 ),
-                Text('Password',style: TextStyle(color: Colors.white),),
+                Text(
+                  'Password',
+                  style: TextStyle(color: Colors.white),
+                ),
                 SizedBox(
                   height: 5.0,
                 ),
@@ -90,13 +107,13 @@ class _loginState extends State<login> {
                     obscureText: true,
                     validator: (value) =>
                         value!.isEmpty ? 'Please enter password' : null,
-                    onSaved: (value) => _Password = value,
-                    decoration: x.copyWith(hintText: 'password',
-                    fillColor: Colors.white)),
+                    onChanged: (value) => _Password = value,
+                    decoration: x.copyWith(
+                        hintText: 'password', fillColor: Colors.white)),
                 SizedBox(
                   height: 20.0,
                 ),
-                longButtons('Login', dologin,color: Colors.black87),
+                longButtons('Login', dologin, color: Colors.black87),
                 SizedBox(
                   height: 8.0,
                 ),
