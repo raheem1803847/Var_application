@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/register.dart';
 import 'package:flutter_application_1/utilites/validator.dart';
 import 'package:flutter_application_1/utilites/widget.dart';
 
@@ -18,6 +20,7 @@ class _loginState extends State<login> {
   final auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
+    // ignore: prefer_function_declarations_over_variables
     var dologin = () async {
       final form = formkey.currentState;
       if (form!.validate()) {
@@ -26,17 +29,38 @@ class _loginState extends State<login> {
               email: _Username, password: _Password);
           User? user = result.user;
           Navigator.pushReplacementNamed(context, '/HomeScreen');
-            if(_Username=="admin@gmail.com"&&_Password=="admin1234")
-        {
+          if (_Username == "admin@gmail.com" && _Password == "admin1234") {
             Navigator.pushReplacementNamed(context, '/AdminPerson');
-        }
-        }
-      
-         on FirebaseAuthException catch (e) {
+          }
+        } on FirebaseAuthException catch (e) {
           if (e.code == 'user-not-found') {
-            print('No user found for that email.');
+           showDialog(
+      context: context,
+      builder: (BuildContext context) => new CupertinoAlertDialog(
+              title: Text("User not found"),
+              content: Text("Please Sign up "),
+              actions:[
+               FlatButton( onPressed: () { 
+                  Navigator.pushReplacementNamed(context, '/register');
+                },
+               child: Text("ok"),)
+
+              ],
+           ));
           } else if (e.code == 'wrong-password') {
-            print('Wrong password provided for that user.');
+                showDialog(
+      context: context,
+      builder: (BuildContext context) => new CupertinoAlertDialog(
+              title: Text("Wrong Password"),
+              content: Text("Please Re-enter your password  "),
+             actions:[
+               FlatButton( onPressed: () { 
+                  Navigator.pushReplacementNamed(context, '/login');
+                },
+               child: Text("ok"),)
+
+              ],
+                ));
           }
         }
       }

@@ -24,7 +24,8 @@ class Body extends StatelessWidget {
               press: () {
                 var currentUser = FirebaseAuth.instance.currentUser;
 
-                if (currentUser != null) {
+                if (currentUser != null) 
+                {
                   text:
                   currentUser.email;
                 }
