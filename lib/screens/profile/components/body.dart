@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'profile_menu.dart';
@@ -18,10 +19,16 @@ class Body extends StatelessWidget {
             press: () => {},
           ),
           ProfileMenu(
-            text: "Email",
-            icon: "assets/icons/Mail.svg",
-            press: () {},
-          ),
+              text: "Email",
+              icon: "assets/icons/Mail.svg",
+              press: () {
+                var currentUser = FirebaseAuth.instance.currentUser;
+
+                if (currentUser != null) {
+                  text:
+                  currentUser.email;
+                }
+              }),
           ProfileMenu(
             text: "Password",
             icon: "assets/icons/Lock.svg",

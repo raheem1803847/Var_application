@@ -8,7 +8,7 @@ import 'package:flutter_application_1/screens/profile/profile_screen.dart';
 import 'package:flutter_application_1/screens/Admin/AdminPerson.dart';
 import 'package:flutter_application_1/screens/register.dart';
 import 'package:flutter_application_1/screens/News.dart';
-import 'package:flutter_application_1/screens/Admin/AdminHome.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,7 +35,6 @@ class MyApp extends StatelessWidget {
           '/HomeScreen': (context) => HomeScreen(),
           '/profile_screen': (context) => ProfileScreen(),
           '/News': (context) => News(),
-          '/AdminHome': (context) => Admin(),
           '/AdminPerson': (context) => AdminPerson(),
           '/Screen': (context) => Screen(),
         });
