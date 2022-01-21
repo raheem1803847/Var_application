@@ -19,15 +19,12 @@ class adminBody extends StatelessWidget {
             press: (_launchURL),
           ),
           adminMenu(
-            text: "username",
+            text: "Add User",
             icon: "assets/icons/Lock.svg",
-            press: () {},
-          ),
-          adminMenu(
-            text: "Password",
-            icon: "assets/icons/Lock.svg",
-            press: () {},
-          ),
+            press: () {
+                     Navigator.pushReplacementNamed(context, '/admin_register');
+            },
+          ),      
           adminMenu(
             text: "Log Out",
             icon: "assets/icons/Lock.svg",
