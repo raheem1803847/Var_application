@@ -1,11 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/Admin/functions/admin_screen.dart';
 import 'package:flutter_application_1/screens/HomeScreen.dart';
 import 'package:flutter_application_1/screens/Screen.dart';
 import 'package:flutter_application_1/screens/SplashScreen.dart';
 import 'package:flutter_application_1/screens/login.dart';
 import 'package:flutter_application_1/screens/profile/profile_screen.dart';
-import 'package:flutter_application_1/screens/Admin/AdminPerson.dart';
 import 'package:flutter_application_1/screens/register.dart';
 import 'package:flutter_application_1/screens/News.dart';
 
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           '/HomeScreen': (context) => HomeScreen(),
           '/profile_screen': (context) => ProfileScreen(),
           '/News': (context) => News(),
-          '/AdminPerson': (context) => AdminPerson(),
+          '/admin_screen': (context) => admin_screen(),
           '/Screen': (context) => Screen(),
         });
   }

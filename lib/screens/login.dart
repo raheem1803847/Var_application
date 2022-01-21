@@ -30,7 +30,7 @@ class _loginState extends State<login> {
           User? user = result.user;
           Navigator.pushReplacementNamed(context, '/HomeScreen');
           if (_Username == "admin@gmail.com" && _Password == "admin1234") {
-            Navigator.pushReplacementNamed(context, '/AdminPerson');
+            Navigator.pushReplacementNamed(context, '/admin_screen');
           }
         } on FirebaseAuthException catch (e) {
           if (e.code == 'user-not-found') {
