@@ -13,7 +13,7 @@ class admin_screen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
-          "Profile",
+          "Admin",
           style: TextStyle(color: Colors.black),
         ),
       ),
