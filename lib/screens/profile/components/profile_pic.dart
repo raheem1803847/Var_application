@@ -34,11 +34,48 @@ class ProfilePic extends StatelessWidget {
                   backgroundColor: Color(0xFFF5F6F9),
                 ),
                 onPressed: () {
-                  
+                  showModalBottomSheet(
+                    context: context,
+                    builder: ((builder) => bottomsheet()),
+                  );
                 },
                 child: SvgPicture.asset("assets/icons/Camera Icon.svg"),
               ),
             ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget bottomsheet() {
+    return Container(
+      height: 100.0,
+      width: 100.0,
+      margin: EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: 20,
+      ),
+      child: Column(
+        children: <Widget>[
+          Text(
+            "choose profile photo",
+            style: TextStyle(fontSize: 20.0),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            children: <Widget>[
+              ElevatedButton.icon(
+                  icon: Icon(Icons.camera),
+                  onPressed: () {},
+                  label: Text("Camera")),
+              ElevatedButton.icon(
+                  icon: Icon(Icons.image),
+                  onPressed: () {},
+                  label: Text("Gallery")),
+            ],
           )
         ],
       ),
