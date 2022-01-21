@@ -26,7 +26,13 @@ class _loginState extends State<login> {
               email: _Username, password: _Password);
           User? user = result.user;
           Navigator.pushReplacementNamed(context, '/HomeScreen');
-        } on FirebaseAuthException catch (e) {
+            if(_Username=="admin@gmail.com"&&_Password=="admin1234")
+        {
+            Navigator.pushReplacementNamed(context, '/AdminPerson');
+        }
+        }
+      
+         on FirebaseAuthException catch (e) {
           if (e.code == 'user-not-found') {
             print('No user found for that email.');
           } else if (e.code == 'wrong-password') {
