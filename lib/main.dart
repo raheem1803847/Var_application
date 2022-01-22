@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Body(),
+        home: SplashScreen(),
         routes: {
           '/login': (context) => login(),
           '/register': (context) => register(),
