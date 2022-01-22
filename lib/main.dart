@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: SplashScreen(),
+        home: Body(),
         routes: {
           '/login': (context) => login(),
           '/register': (context) => register(),
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           '/News': (context) => News(),
           '/admin_screen': (context) => admin_screen(),
           '/Screen': (context) => Screen(),
-          '/admin_register':(context)=> registera(),
+          '/admin_register': (context) => registera(),
         });
   }
 }
