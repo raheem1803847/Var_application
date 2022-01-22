@@ -18,42 +18,31 @@ class Body extends StatelessWidget {
             text: "Email",
             icon: "assets/icons/Mail.svg",
             press: () {
-        var currentUser = FirebaseAuth.instance.currentUser;
-                       if (currentUser != null) 
-                {
-                  text:currentUser.email;
-                }
-          showDialog(
-      context: context,
-      builder: (BuildContext context) => new CupertinoAlertDialog(
-              title: Text("your Email is ${currentUser!.email} "),
-             actions:[
-               FlatButton( onPressed: () { 
-                  Navigator.pushReplacementNamed(context, '/profile_screen');
-                },
-               child: Text("ok"),)
-
-              ],
-                ));
-              },
-
-            
-          ),
-          ProfileMenu(
-            text: "username",
-            icon: "assets/icons/User Icon.svg",
-            press: ()  {},
-          ),
-          ProfileMenu(
-            text: "Password",
-            icon: "assets/icons/Lock.svg",
-            press: () {},
+              var currentUser = FirebaseAuth.instance.currentUser;
+              if (currentUser != null) {
+                text:
+                currentUser.email;
+              }
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) => new CupertinoAlertDialog(
+                        title: Text("your Email is ${currentUser!.email} "),
+                        actions: [
+                          FlatButton(
+                            onPressed: () {
+                              Navigator.pushReplacementNamed(
+                                  context, '/profile_screen');
+                            },
+                            child: Text("ok"),
+                          )
+                        ],
+                      ));
+            },
           ),
           ProfileMenu(
             text: "Log Out",
             icon: "assets/icons/Log out.svg",
             press: () {
-              
               Navigator.pushReplacementNamed(context, '/login');
             },
           ),
