@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utilites/menuBar.dart';
 import 'package:flutter_application_1/utilites/widget.dart';
+import 'package:flutter_application_1/screens/TableScreen.dart';
+import 'package:flutter_application_1/utilites/menuBar.dart';
+import 'package:get/get.dart';
 
-void main() => runApp(News());
 
 class News extends StatelessWidget {
   @override
@@ -12,16 +14,11 @@ class News extends StatelessWidget {
       body:SafeArea(
         child:Container(
           decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/mosalah.jpg'),
-                fit: BoxFit.cover,
-                colorFilter:
-                    ColorFilter.mode(Colors.white10, BlendMode.colorDodge),
-              ),
+              
               gradient: LinearGradient(
                 colors: [
-                  const Color(0xffe84860),
-                  const Color(0xffe70066),
+                  const Color(0x000000),
+                  const Color(0xFFFF9100),
                 ],
                 begin: const FractionalOffset(0.0, 0.0),
                 end: const FractionalOffset(0.0, 1.0),
