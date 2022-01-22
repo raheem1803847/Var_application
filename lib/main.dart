@@ -6,10 +6,10 @@ import 'package:flutter_application_1/screens/HomeScreen.dart';
 import 'package:flutter_application_1/screens/Screen.dart';
 import 'package:flutter_application_1/screens/SplashScreen.dart';
 import 'package:flutter_application_1/screens/login.dart';
+import 'package:flutter_application_1/screens/profile/components/body.dart';
 import 'package:flutter_application_1/screens/profile/profile_screen.dart';
 import 'package:flutter_application_1/screens/register.dart';
 import 'package:flutter_application_1/screens/News.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
