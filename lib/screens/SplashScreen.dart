@@ -13,10 +13,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 10),
-        () => Navigator.restorablePushReplacementNamed(context, '/login'),
-    ); 
+      Duration(seconds: 5),
+      () => Navigator.restorablePushReplacementNamed(context, '/login'),
+    );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

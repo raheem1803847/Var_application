@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'profile_menu.dart';
@@ -14,26 +15,29 @@ class Body extends StatelessWidget {
           ProfilePic(),
           SizedBox(height: 20),
           ProfileMenu(
-            text: "username",
-            icon: "assets/icons/User Icon.svg",
-            press: () => {},
-          ),
-          ProfileMenu(
-              text: "Email",
-              icon: "assets/icons/Mail.svg",
-              press: () {
-                var currentUser = FirebaseAuth.instance.currentUser;
-
-                if (currentUser != null) 
-                {
-                  text:
-                  currentUser.email;
-                }
-              }),
-          ProfileMenu(
-            text: "Password",
-            icon: "assets/icons/Lock.svg",
-            press: () {},
+            text: "Email",
+            icon: "assets/icons/Mail.svg",
+            press: () {
+              var currentUser = FirebaseAuth.instance.currentUser;
+              if (currentUser != null) {
+                text:
+                currentUser.email;
+              }
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) => new CupertinoAlertDialog(
+                        title: Text("your Email is ${currentUser!.email} "),
+                        actions: [
+                          FlatButton(
+                            onPressed: () {
+                              Navigator.pushReplacementNamed(
+                                  context, '/profile_screen');
+                            },
+                            child: Text("ok"),
+                          )
+                        ],
+                      ));
+            },
           ),
           ProfileMenu(
             text: "Log Out",

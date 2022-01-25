@@ -1,12 +1,21 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:image_picker/image_picker.dart';
 
-class ProfilePic extends StatelessWidget {
+class ProfilePic extends StatefulWidget {
   const ProfilePic({
     Key? key,
   }) : super(key: key);
 
   @override
+  _ProfilePicState createState() => _ProfilePicState();
+}
+
+class _ProfilePicState extends State<ProfilePic> {
+  File? _imageFile;
+  final ImagePicker _picker = ImagePicker();
   Widget build(BuildContext context) {
     return SizedBox(
       height: 115,
@@ -16,7 +25,9 @@ class ProfilePic extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           CircleAvatar(
-            backgroundImage: AssetImage("assets/images/profile.jfif"),
+            backgroundImage: _imageFile == null
+                ? AssetImage("assets/images/profile.jfif")
+                : FileImage(File(_imageFile!.path)) as ImageProvider,
           ),
           Positioned(
             right: -16,
@@ -33,7 +44,12 @@ class ProfilePic extends StatelessWidget {
                   primary: Colors.white,
                   backgroundColor: Color(0xFFF5F6F9),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: ((builder) => bottomsheet()),
+                  );
+                },
                 child: SvgPicture.asset("assets/icons/Camera Icon.svg"),
               ),
             ),
@@ -41,5 +57,53 @@ class ProfilePic extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget bottomsheet() {
+    return Container(
+      height: 100.0,
+      width: 100.0,
+      margin: EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: 20,
+      ),
+      child: Column(
+        children: <Widget>[
+          Text(
+            "choose profile photo",
+            style: TextStyle(fontSize: 20.0),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton.icon(
+                  icon: Icon(Icons.camera),
+                  onPressed: () {
+                    takephoto(ImageSource.camera);
+                  },
+                  label: Text("Camera")),
+              ElevatedButton.icon(
+                  icon: Icon(Icons.image),
+                  onPressed: () {
+                    takephoto(ImageSource.gallery);
+                  },
+                  label: Text("Gallery")),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Future takephoto(ImageSource source) async {
+    final pickedFile = await _picker.pickImage(
+      source: source,
+    );
+    if (pickedFile == null) return;
+    final imagetemporary = File(pickedFile.path);
+    setState(() => this._imageFile = imagetemporary);
   }
 }
