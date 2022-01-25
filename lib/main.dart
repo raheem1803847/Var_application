@@ -35,9 +35,9 @@ class MyApp extends StatelessWidget {
           '/register': (context) => register(),
           '/HomeScreen': (context) => HomeScreen(),
           '/profile_screen': (context) => ProfileScreen(),
-          '/News': (context) => News(),     //News(),MyApp1()
-          '/AdminPerson': (context) => AdminPerson(),
-          '/Screen': (context) => Screen(),
+          '/News': (context) => MyApp1(), //sports()
+          '/AdminPerson':(context) => AdminPerson(),                 
+          '/Screen':(context)=>Screen(),
         });
   }
 }

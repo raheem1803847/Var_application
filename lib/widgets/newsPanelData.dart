@@ -13,9 +13,6 @@ import 'package:http/http.dart' as http;
 String allArticles = "https://newsapi.org/v2/top-headlines?country=us&apiKey=0bcc6818d60e47538838b2b8340216b0";
 
 
-Future<http.Response> fetchAlbum() {
-  return http.get(Uri.parse('https://newsapi.org/v2/top-headlines?country=us&apiKey=0bcc6818d60e47538838b2b8340216b0'));
-}
 
 
 
